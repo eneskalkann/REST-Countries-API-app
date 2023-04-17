@@ -8,6 +8,7 @@ module.exports = {
       veryDarkBlueText: '#111517',
       darkGray: '#858585',
       veryLightGray: '#fafafa',
+      white:'#fff'
     },
     fontFamily:{
       nunito: 'Nunito Sans, sans-serif'

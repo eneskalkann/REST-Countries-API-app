@@ -22,8 +22,11 @@ function App() {
               key={index}
               className=" col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3"
             >
-              <div className=" cursor-pointer bg-darkGray rounded-lg h-[402px]">
-                <img src={item.flags.svg} className=" rounded-t-lg" />
+              <div className=" cursor-pointer bg-white rounded-lg h-[402px] shadow-md">
+                <img
+                  src={item.flags.svg}
+                  className=" rounded-t-lg object-cover h-[201px] w-full"
+                />
                 <h4 className="my-5 ml-6 text-xl font-semibold">
                   {item.name.common}
                 </h4>
