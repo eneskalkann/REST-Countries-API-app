@@ -23,8 +23,8 @@ function Filter() {
   };
   
   return (
-    <div className="flex justify-between items-center my-8">
-      <div className="w-[480px] bg-white shadow-md rounded-lg">
+    <div className="flex items-center justify-between my-8">
+      <div className="w-[480px] shadow-md rounded-lg">
         <div className="flex items-center gap-4 px-5 py-3">
           <CiSearch />
           <input
@@ -34,14 +34,14 @@ function Filter() {
           />
         </div>
       </div>
-      <div className="relative bg-white group transition-all">
-        {/* <div className="flex items-center px-3 py-3 shadow-md rounded-lg gap-9 justify-between cursor-pointer">
+      <div className="relative transition-all bg-none group">
+        {/* <div className="flex items-center justify-between px-3 py-3 rounded-lg shadow-md cursor-pointer gap-9">
           <span>Filter By Religion</span>
           <MdKeyboardArrowDown />
         </div> */}
         <label>
         Choose a region:
-        <select value={region} onChange={handleRegionChange}>
+        <select value={region} onChange={handleRegionChange} className=" bg-none">
           <option value="europe">Europe</option>
           <option value="asia">Asia</option>
           <option value="americas">Americas</option>
@@ -54,7 +54,7 @@ function Filter() {
           return (
             <div
               key={index}
-              className=" col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3"
+              className="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3"
             >
               <div className=" cursor-pointer bg-white rounded-lg h-[402px] shadow-md">
                 <img
@@ -64,17 +64,17 @@ function Filter() {
                 <h4 className="my-5 ml-6 text-xl font-semibold">
                   {item.name.common}
                 </h4>
-                <div className=" flex flex-col gap-1 ml-6">
-                  <p className=" flex gap-1">
-                    <span className=" font-semibold">Population:</span>
+                <div className="flex flex-col gap-1 ml-6 ">
+                  <p className="flex gap-1 ">
+                    <span className="font-semibold ">Population:</span>
                     {item.population}
                   </p>
-                  <p className=" flex gap-1">
-                    <span className=" font-semibold">Region:</span>
+                  <p className="flex gap-1 ">
+                    <span className="font-semibold ">Region:</span>
                     {item.region}
                   </p>
-                  <p className=" flex gap-1">
-                    <span className=" font-semibold">Capital:</span>
+                  <p className="flex gap-1 ">
+                    <span className="font-semibold ">Capital:</span>
                     {item.capital}
                   </p>
                 </div>
