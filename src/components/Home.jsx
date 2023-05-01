@@ -59,12 +59,12 @@ const Home = () => {
         <Search onSearch={getCountry} />
         <Filter onFilter={getRegion} />
       </div>
-      <div className="grid grid-cols-12 col-span-12 gap-10">
+      <div className="grid grid-cols-12 col-span-12 gap-5 md:gap-10">
         {data &&
           data.map((data, index) => (
             <Link
               to={`/country/${data.ccn3}`}
-              className="col-span-12 gap-5 scroll-smooth md:gap-10 md:col-span-6 lg:col-span-4 xl:col-span-3"
+              className="w-full col-span-12 gap-5 scroll-smooth md:gap-10 md:col-span-6 lg:col-span-4 xl:col-span-3"
             >
               <div key={index}>
                 <div className="cursor-pointer bg-white rounded-lg h-[402px] shadow-md">
