@@ -104,14 +104,23 @@ const Detail = () => {
                 </p>
               </div>
             </div>
-            <p className="font-semibold text-veryDarkBlueText">
-              Borders:{" "}
-              {detail && detail.borders ? (
-                <span className="font-light">{detail.borders.join(", ")}</span>
-              ) : (
-                <span className="font-light">None</span>
-              )}
-            </p>
+            <div className="space-y-3">
+              <p className="font-semibold text-veryDarkBlueText">Borders:</p>
+              <div className="flex gap-3">
+                {detail && detail.borders ? (
+                  detail.borders.map((border, index) => (
+                    <div
+                      key={index}
+                      className="flex justify-center w-[200px] px-2 bg-white border rounded shadow-md border-darkGray border-opacity-30"
+                    >
+                      <span className="font-light">{border}</span>
+                    </div>
+                  ))
+                ) : (
+                  <span className="font-light">None</span>
+                )}
+              </div>
+            </div>
           </div>
         </div>
       ))}
