@@ -1,13 +1,16 @@
-const Filter = ({onFilter}) => {
-
-  const handleSubmit = (e)=>{
+const Filter = ({ onFilter }) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const filter = e.target.value;
     onFilter(filter);
-  }
-  return ( 
+  };
+  return (
     <div className="flex">
-      <select onChange={handleSubmit} className="outline-none " value="Filter By Religion">
+      <select
+        onChange={handleSubmit}
+        className="outline-none"
+        value="Filter By Religion"
+      >
         <option className="option" value="Africa">
           Africa
         </option>
@@ -25,7 +28,7 @@ const Filter = ({onFilter}) => {
         </option>
       </select>
     </div>
-   );
-}
- 
+  );
+};
+
 export default Filter;

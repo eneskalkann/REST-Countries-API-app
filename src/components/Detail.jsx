@@ -31,27 +31,34 @@ const Detail = () => {
       <div className="col-span-12">
         <Link
           to="/"
-          className="inline-flex items-center justify-between gap-3 px-8 py-[14px] bg-white rounded-md shadow-lg text-darkBlue"
+          className="inline-flex items-center justify-between gap-3 px-6 py-3 md:px-8 md:py-[14px] bg-white rounded-md shadow-lg text-darkBlue"
         >
           <IoIosArrowRoundBack size={24} />
           Back
         </Link>
       </div>
       {detail?.map((detail, index) => (
-        <div key={index} className="grid grid-cols-11 col-span-11 mt-10">
-          <div className="col-span-5">
-            <img src={detail.flags.svg} alt={detail.name.common} />
+        <div
+          key={index}
+          className="grid grid-cols-12 col-span-12 mt-10 mb-10 md:mb-0"
+        >
+          <div className="col-span-12 md:col-span-6">
+            <img
+              src={detail.flags.svg}
+              alt={detail.name.common}
+              className="object-cover w-full md:w-4/5"
+            />
           </div>
-          <div className="col-span-1"></div>
-          <div className="flex flex-col justify-between col-span-5 space-y-8 whitespace-nowrap">
-            <h3 className="text-2xl font-bold text-veryDarkBlueText">
+          <div className="hidden md:col-span-1"></div>
+          <div className="flex flex-col justify-between col-span-12 space-y-8 md:col-span-6 whitespace-nowrap">
+            <h3 className="mt-5 text-2xl font-bold text-veryDarkBlueText md:mt-0">
               {detail.name.common}
             </h3>
-            <div className="flex flex-col gap-20 md:flex-row">
+            <div className="flex flex-col gap-10 md:gap-20 md:flex-row">
               <div className="space-y-2">
                 <p className="flex gap-1 font-semibold w-72 whitespace-nowrap text-veryDarkBlueText">
                   Native Name:
-                  <span className="font-light whitespace-pre-wrap">
+                  <span className="font-light md:whitespace-pre-wrap">
                     {detail.name.official}
                   </span>
                 </p>
