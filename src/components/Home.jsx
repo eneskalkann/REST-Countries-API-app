@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Filter from "./Filter";
 import Search from "./Search";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -14,6 +15,7 @@ const Home = () => {
       }
       const datas = await res.json();
       setData(datas);
+      console.log(datas)
     } catch (err) {
       setError(err.message);
     }
@@ -52,18 +54,16 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-12">
-      <div className="flex justify-between col-span-12 py-12">
+    <div className="grid grid-cols-12 mb-5">
+      <div className="justify-between block col-span-12 py-12 space-y-10 md:space-y-0 md:gap-3 md:flex">
         <Search onSearch={getCountry} />
         <Filter onFilter={getRegion} />
       </div>
       <div className="grid grid-cols-12 col-span-12 gap-10">
         {data &&
           data.map((data, index) => (
-            <div
-              key={index}
-              className="col-span-12 gap-10 md:col-span-6 lg:col-span-4 xl:col-span-3"
-            >
+            <Link to={`/country/${data.ccn3}`} className="col-span-12 gap-5 md:gap-10 md:col-span-6 lg:col-span-4 xl:col-span-3">
+            <div key={index}>
               <div className="cursor-pointer bg-white rounded-lg h-[402px] shadow-md">
                 <img
                   src={data.flags.svg}
@@ -89,6 +89,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
+            </Link>
           ))}
       </div>
     </div>
