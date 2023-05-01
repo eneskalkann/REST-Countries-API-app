@@ -27,18 +27,18 @@ const Detail = () => {
   }
 
   return (
-    <div className="grid grid-cols-12 space-y-20">
+    <div className="grid grid-cols-12 mt-12">
       <div className="col-span-12">
         <Link
           to="/"
-          className="inline-flex items-center justify-between gap-3 px-8 py-2 bg-white rounded-md shadow-lg text-darkBlue"
+          className="inline-flex items-center justify-between gap-3 px-8 py-[14px] bg-white rounded-md shadow-lg text-darkBlue"
         >
           <IoIosArrowRoundBack size={24} />
           Back
         </Link>
       </div>
       {detail?.map((detail, index) => (
-        <div key={index} className="grid grid-cols-11 col-span-11">
+        <div key={index} className="grid grid-cols-11 col-span-11 mt-10">
           <div className="col-span-5">
             <img src={detail.flags.svg} alt={detail.name.common} />
           </div>
@@ -49,9 +49,11 @@ const Detail = () => {
             </h3>
             <div className="flex flex-col gap-20 md:flex-row">
               <div className="space-y-2">
-                <p className="flex gap-1 font-semibold text-veryDarkBlueText">
+                <p className="flex gap-1 font-semibold w-72 whitespace-nowrap text-veryDarkBlueText">
                   Native Name:
-                  <span className="font-light ">{detail.name.official}</span>
+                  <span className="font-light whitespace-pre-wrap">
+                    {detail.name.official}
+                  </span>
                 </p>
                 <p className="flex gap-1 font-semibold text-veryDarkBlueText">
                   Population:
@@ -70,7 +72,7 @@ const Detail = () => {
                   <span className="font-light ">{detail.capital}</span>
                 </p>
               </div>
-              <div>
+              <div className="space-y-2">
                 <p className="flex gap-1 font-semibold text-veryDarkBlueText">
                   Top Level Domain:
                   <span className="font-light ">{detail.tld}</span>
@@ -84,16 +86,24 @@ const Detail = () => {
                 <p className="flex gap-1 font-semibold text-veryDarkBlueText">
                   Languages:
                   <span className="font-light ">
-                    {detail &&
-                      Object.values(detail.languages)[0] +
-                        ", " +
-                        Object.values(detail.languages)[1]}
+                    {detail && detail.languages && (
+                      <>
+                        {Object.values(detail.languages)[0]}
+                        {Object.values(detail.languages)[1] &&
+                          `, ${Object.values(detail.languages)[1]}`}
+                      </>
+                    )}
                   </span>
                 </p>
               </div>
             </div>
             <p className="font-semibold text-veryDarkBlueText">
-              Borders: <span className="font-light">{}</span>
+              Borders:{" "}
+              {detail && detail.borders ? (
+                <span className="font-light">{detail.borders.join(", ")}</span>
+              ) : (
+                <span className="font-light">None</span>
+              )}
             </p>
           </div>
         </div>
