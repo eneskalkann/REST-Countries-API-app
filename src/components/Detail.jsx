@@ -21,7 +21,7 @@ const Detail = () => {
   }, [alpha3Code]);
 
   return (
-    <div className="grid grid-cols-12 mt-12">
+    <div className="grid grid-cols-12 mt-12 overflow-x-hidden">
       {loading ? (
         <div class="animate-pulse col-span-12">
           <div className="justify-between block col-span-12 py-12 space-y-10 md:space-y-0 md:gap-3 md:flex">
@@ -144,12 +144,12 @@ const Detail = () => {
                   <p className="font-semibold text-veryDarkBlueText">
                     Borders:
                   </p>
-                  <div className="flex gap-3">
+                  <div className="flex flex-wrap gap-3">
                     {detail && detail.borders ? (
                       detail.borders.map((border, index) => (
                         <div
                           key={index}
-                          className="flex justify-center w-[200px] px-2 bg-white border rounded shadow-md border-darkGray border-opacity-30"
+                          className="flex justify-center px-2 bg-white border rounded shadow-md flex-basis border-darkGray border-opacity-30"
                         >
                           <span className="font-light">{border}</span>
                         </div>

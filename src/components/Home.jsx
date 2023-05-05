@@ -58,7 +58,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-12 mb-5">
+    <div className="grid grid-cols-12 mb-5 overflow-x-hidden">
       {loading ? (
         <div class="animate-pulse col-span-12">
           <div className="justify-between block col-span-12 py-12 space-y-10 md:space-y-0 md:gap-3 md:flex">
