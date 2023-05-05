@@ -72,7 +72,7 @@ const Home = () => {
                 className="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3"
               >
                 <div className="col-span-12 gap-5">
-                  <div className="flex items-center justify-center h-48 mb-4 rounded bg-lightGray dark:bg-gray-700">
+                  <div className="flex items-center justify-center h-48 mb-4 rounded bg-lightGray">
                     <svg
                       className="w-12 h-12 text-darkGray"
                       xmlns="http://www.w3.org/2000/svg"
