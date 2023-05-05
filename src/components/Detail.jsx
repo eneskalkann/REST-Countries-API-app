@@ -96,7 +96,11 @@ const Detail = () => {
                     </p>
                     <p className="flex gap-1 font-semibold text-veryDarkBlueText">
                       Population:
-                      <span className="font-light ">{detail.population}</span>
+                      <span className="font-light ">
+                        {detail.population.toLocaleString(navigator.language, {
+                          minimumFractionDigits: 0,
+                        })}
+                      </span>
                     </p>
                     <p className="flex gap-1 font-semibold text-veryDarkBlueText">
                       Region:

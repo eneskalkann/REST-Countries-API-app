@@ -119,7 +119,9 @@ const Home = () => {
                       <div className="flex flex-col gap-1 ml-6">
                         <p className="flex gap-1">
                           <span className="font-semibold">Population:</span>
-                          {data.population}
+                          {data.population.toLocaleString(navigator.language, {
+                            minimumFractionDigits: 0,
+                          })}
                         </p>
                         <p className="flex gap-1">
                           <span className="font-semibold">Region:</span>
