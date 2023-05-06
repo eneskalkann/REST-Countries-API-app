@@ -60,10 +60,10 @@ const Home = () => {
   return (
     <div className="grid grid-cols-12 mb-5 overflow-x-hidden">
       {loading ? (
-        <div class="animate-pulse col-span-12">
+        <div className="col-span-12 animate-pulse">
           <div className="justify-between block col-span-12 py-12 space-y-10 md:space-y-0 md:gap-3 md:flex">
-            <div class="h-10 w-full md:w-[478px] bg-darkGray rounded-md mb-4"></div>
-            <div class="h-10 w-full md:w-[178px] bg-darkGray rounded-md mb-4"></div>
+            <div className="h-10 w-full md:w-[478px] bg-darkGray rounded-md mb-4"></div>
+            <div className="h-10 w-full md:w-[178px] bg-darkGray rounded-md mb-4"></div>
           </div>
           <div className="grid grid-cols-12 gap-5">
             {[...Array(12)].map((_, index) => (
@@ -91,7 +91,7 @@ const Home = () => {
             ))}
           </div>
 
-          <span class="sr-only">Loading...</span>
+          <span className="sr-only">Loading...</span>
         </div>
       ) : (
         <>
@@ -103,13 +103,14 @@ const Home = () => {
             {data &&
               data.map((data, index) => (
                 <Link
+                  key={index}
                   to={`/country/${data.ccn3}`}
                   className="w-full col-span-12 gap-5 scroll-smooth md:gap-10 md:col-span-6 lg:col-span-4 xl:col-span-3"
                 >
-                  <div key={index}>
+                  <div>
                     <div className="cursor-pointer bg-white rounded-lg h-[402px] shadow-md">
                       <img
-                        src={data.flags.svg}
+                        src={data.flags.png}
                         className="rounded-t-lg object-cover h-[201px] w-full"
                         alt=""
                       />

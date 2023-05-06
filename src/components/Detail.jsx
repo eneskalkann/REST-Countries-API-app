@@ -76,7 +76,7 @@ const Detail = () => {
             >
               <div className="col-span-12 md:col-span-6">
                 <img
-                  src={detail.flags.svg}
+                  src={detail.flags.png}
                   alt={detail.name.common}
                   className="object-cover w-full md:w-4/5"
                 />
